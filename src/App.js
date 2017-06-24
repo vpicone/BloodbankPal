@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
-import Route from './Route';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import routeData from './routeData';
 import TitleBar from './TitleBar';
 import OrderButton from './OrderButton';
+import RouteContainer from './RouteContainer';
 injectTapEventPlugin();
 
 
@@ -44,14 +43,7 @@ class App extends React.Component {
           <div>
             <TitleBar currentTime = {this.state.currentTime} isWeekend = {isWeekend} />
             <OrderButton />
-            {/*This Should be it's own component*/}
-            {routeData.map( (route, index) => (
-              <Route currentTimeString={currentTimeString} 
-                     route={route} 
-                     key={index}
-                     isWeekend={isWeekend}
-              />
-            ))}
+            <RouteContainer className = 'RouteContainer' currentTimeString={currentTimeString} isWeekend={isWeekend} />
           </div>
         </MuiThemeProvider>
       </div>

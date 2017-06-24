@@ -5,10 +5,10 @@ import {Card} from 'material-ui/Card';
 import Divider from 'material-ui/Divider';
 
 const liststyle = {
-    display: "block",
-    float: 'left',
-    marginLeft: '60px',
-    marginTop: '60px',
+    display: "inline-block",
+    float: "none",
+    width: "125px",
+    margin: "20px",
     padding: '10px',
     textAlign: 'center'
 }
