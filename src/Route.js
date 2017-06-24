@@ -19,7 +19,7 @@ const listitemstyle = {
     borderRadius: '5px'
 }
 
-function routeComplete(stops, time){
+function routeIncomplete(stops, time){
         let completed = [];
         completed = stops.map(element => {
             if (element.arrivalTime > time)
@@ -28,7 +28,7 @@ function routeComplete(stops, time){
                 return true;
         });
         
-        return (completed.indexOf(false) !== -1)
+        return (completed.includes(false))
     }
 
 
@@ -37,7 +37,8 @@ class Route extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            
+            destinations: this.props.route.destinations,
+            completed: false,
         }
     }
     
@@ -52,12 +53,11 @@ class Route extends React.Component {
     }
     
     
-    
-    
     render() {
+        
         return (
             <div className='Route'>
-                 {routeComplete(this.props.route.destinations, this.props.currentTimeString.slice(0,4)) ?
+                 {routeIncomplete(this.props.route.destinations, this.props.currentTimeString.slice(0,4)) && (this.props.route.weekendRoute === this.props.isWeekend) ?
                     <Card style = {liststyle}>
                         <List>
                             <ListItem><h3>Route #{this.props.route.routeNumber}</h3></ListItem>
@@ -77,7 +77,8 @@ class Route extends React.Component {
                                     </div>
                                 ))}
                         </List>
-                    </Card> : ''}
+                    </Card>
+                 : ''}
             </div>
         );
     }

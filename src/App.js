@@ -5,6 +5,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routeData from './routeData';
 import TitleBar from './TitleBar';
+import OrderButton from './OrderButton';
 injectTapEventPlugin();
 
 
@@ -32,21 +33,23 @@ class App extends React.Component {
     });
   }
   
-
-  
   render() {
     
     const currentTimeString = this.state.currentTime.toLocaleTimeString('en-US', { hour12: false }).replace(/:/g,'');
+    const isWeekend = (this.state.currentTime.getDay() === 0 || this.state.currentTime.getDay() === 6);
     
     return (
       <div className="App">
         <MuiThemeProvider>
           <div>
-            <TitleBar currentTime = {this.state.currentTime} />
+            <TitleBar currentTime = {this.state.currentTime} isWeekend = {isWeekend} />
+            <OrderButton />
+            {/*This Should be it's own component*/}
             {routeData.map( (route, index) => (
               <Route currentTimeString={currentTimeString} 
                      route={route} 
-                     key={index} 
+                     key={index}
+                     isWeekend={isWeekend}
               />
             ))}
           </div>

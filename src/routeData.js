@@ -1,6 +1,7 @@
 const routeData = [
   {
     routeNumber: '101',
+    weekendRoute: false,
     destinations: [
                     { hospital:'SMCA', arrivalTime:'0619'},
                     { hospital:'DSM', arrivalTime:'0717' },
@@ -13,6 +14,7 @@ const routeData = [
   },
   {
     routeNumber: '103',
+    weekendRoute: false,
     destinations: [
                     { hospital:'SMCA', arrivalTime:'0626'},
                     { hospital:'SMCH', arrivalTime:'0751' },
@@ -26,6 +28,7 @@ const routeData = [
   },
   {
     routeNumber: '104',
+    weekendRoute: false,
     destinations: [
                     { hospital:'SMCA', arrivalTime:'1400'},
                     { hospital:'DSM', arrivalTime:'1436' },
@@ -35,6 +38,7 @@ const routeData = [
   },
   {
     routeNumber: '105',
+    weekendRoute: false,
     destinations: [
                     { hospital:'SMCA', arrivalTime:'1300'},
                     { hospital:'DSM', arrivalTime:'1340' },
@@ -42,6 +46,7 @@ const routeData = [
   },
   {
     routeNumber: '106',
+    weekendRoute: false,
     destinations: [
                     { hospital:'SMCA', arrivalTime:'1414'},
                     { hospital:'DSM', arrivalTime:'1441' },
@@ -50,11 +55,11 @@ const routeData = [
                     { hospital:'SMCA', arrivalTime:'1814'},
                     { hospital:'SMCH', arrivalTime:'1943' },
                     { hospital:'DSM', arrivalTime:'2055' },
-                    { hospital:'SMCA', arrivalTime:'2130' },
                   ]
   },
   {
     routeNumber: '107',
+    weekendRoute: true,
     destinations: [
                     { hospital:'SSW', arrivalTime:'1921'},
                     { hospital:'DSM', arrivalTime:'1943' },
@@ -62,6 +67,7 @@ const routeData = [
   },
   {
     routeNumber: '108',
+    weekendRoute: true,
     destinations: [
                     { hospital:'DCMC', arrivalTime:'1654'},
                     { hospital:'SMCA', arrivalTime:'1831' },
@@ -74,6 +80,7 @@ const routeData = [
   },
   {
     routeNumber: '110',
+    weekendRoute: true,
     destinations: [
                     { hospital:'SMCA', arrivalTime:'0618'},
                     { hospital:'SMCW', arrivalTime:'0707' },
@@ -83,6 +90,7 @@ const routeData = [
   },
   {
     routeNumber: '111',
+    weekendRoute: true,
     destinations: [
                     { hospital:'SMCA', arrivalTime:'1414'},
                     { hospital:'DSM', arrivalTime:'1434' },
@@ -93,6 +101,7 @@ const routeData = [
   },
   {
     routeNumber: '113',
+    weekendRoute: true,
     destinations: [
                     { hospital:'SMCA', arrivalTime:'1720'},
                     { hospital:'DSM', arrivalTime:'1832' },
