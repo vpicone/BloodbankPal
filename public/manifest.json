@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Medspeedy",
+  "name": "Medspeed delivery route viewer",
   "icons": [
     {
       "src": "favicon.ico",
