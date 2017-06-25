@@ -16,7 +16,8 @@ const liststyle = {
 const listitemstyle = {
     padding: '5px',
     margin: '5px',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    textAlign:'center'
 }
 
 function routeIncomplete(stops, time){
@@ -60,7 +61,7 @@ class Route extends React.Component {
                  {routeIncomplete(this.props.route.destinations, this.props.currentTimeString.slice(0,4)) && (this.props.route.weekendRoute === this.props.isWeekend) ?
                     <Card style = {liststyle}>
                         <List>
-                            <ListItem><h3>Route #{this.props.route.routeNumber}</h3></ListItem>
+                            <ListItem disabled='true'><h3>Route<br/><br/>{this.props.route.routeNumber}</h3></ListItem>
                             <Divider />
                                 {this.props.route.destinations.map( (destination, index) => (
                                     <div>
