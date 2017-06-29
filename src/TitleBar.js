@@ -2,12 +2,8 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import OrderButton from './OrderButton';
 
-
-
-  
-
 const TitleBar = (props) => {
-    
+
     function dayString(day) {
         let str;
         switch(day) {
@@ -36,30 +32,29 @@ const TitleBar = (props) => {
                 str = 'No date'
                 break;
         }
-        
+
         return str;
     }
-    
+
     const style = {
+				margin: "auto",
         width: "600px",
-        margin: "auto",
+				padding: "5px",
+				marginTop: "20px",
     };
-    
+
     const textStyle = {
-        padding: "20px",
+
     };
-    
+
     return (
-        <div>
-            <Paper zDepth={2} style={style}>
-                <h1 style={textStyle}> {dayString(props.dayOfWeek)} Mespeed Routes
-                    <br />
-                    Current Time: {props.currentTime.toLocaleTimeString('en-US', { hour12: false })}
-                    
-                </h1>
-                <OrderButton />
-            </Paper>
-        </div>
+					<Paper zDepth={2} style={style}>
+						<h1 style={textStyle}> {dayString(props.dayOfWeek)} Mespeed Routes
+							<br />
+							Current Time: {props.currentTime.toLocaleTimeString('en-US', { hour12: false })}
+						</h1>
+						<OrderButton />
+					</Paper>
     )
 }
 
