@@ -43,15 +43,6 @@ class Route extends React.Component {
         }
     }
     
-    componentDidMount() {
-        Array.from(document.getElementsByClassName('SMCA')).forEach( element => {element.style.backgroundColor = 'PaleVioletRed';});
-        Array.from(document.getElementsByClassName('DSM')).forEach( element => {element.style.backgroundColor = 'ForestGreen';});
-        Array.from(document.getElementsByClassName('DCMC')).forEach( element => {element.style.backgroundColor = 'Chartreuse';});
-        Array.from(document.getElementsByClassName('SMCH')).forEach( element => {element.style.backgroundColor = 'Gold';});
-        Array.from(document.getElementsByClassName('SSW')).forEach( element => {element.style.backgroundColor = 'FireBrick';});
-        Array.from(document.getElementsByClassName('SNW')).forEach( element => {element.style.backgroundColor = 'DodgerBlue';});
-        Array.from(document.getElementsByClassName('SMCW')).forEach( element => {element.style.backgroundColor = 'OrangeRed';});
-    }
     
     
     render() {

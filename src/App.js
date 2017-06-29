@@ -36,14 +36,15 @@ class App extends React.Component {
     
     const currentTimeString = this.state.currentTime.toLocaleTimeString('en-US', { hour12: false }).replace(/:/g,'');
     const isWeekend = (this.state.currentTime.getDay() === 0 || this.state.currentTime.getDay() === 6);
+    const dayOfWeek = this.state.currentTime.getDay();
     
     return (
       <div className="App">
         <MuiThemeProvider>
           <div>
-            <TitleBar currentTime = {this.state.currentTime} isWeekend = {isWeekend} />
+            <TitleBar currentTime = {this.state.currentTime} isWeekend = {isWeekend} dayOfWeek={dayOfWeek} />
             <OrderButton />
-            <RouteContainer className = 'RouteContainer' currentTimeString={currentTimeString} isWeekend={isWeekend} />
+            <RouteContainer className = 'RouteContainer' currentTimeString={currentTimeString} dayOfWeek = {dayOfWeek} />
           </div>
         </MuiThemeProvider>
       </div>

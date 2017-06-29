@@ -9,7 +9,7 @@ const style = {
 
 const OrderButton = () => {
     return (
-        <RaisedButton buttonStyle={style} style={style} href='https://seton.medspeed.com/order/start'>Medspeed Order Form</RaisedButton>
+        <RaisedButton  buttonStyle={style} style={style} href='https://seton.medspeed.com/order/start'>Medspeed Order Form</RaisedButton>
     )
 }
 
