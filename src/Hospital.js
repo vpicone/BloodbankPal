@@ -25,10 +25,9 @@ class Hospital extends React.Component {
     constructor(props)
     {
         super(props);
-        this.remainingTimes = this.props.times.filter( time => {
-            return time > this.props.currentTimeString;
-        });
-        this.pickupsPending = this.remainingTimes.length !== 0; 
+        this.state = {
+            remainingTimes: this.props.remainingTimes,
+        }
         
     }
     
@@ -37,26 +36,27 @@ class Hospital extends React.Component {
     }
     
     getRemainingTimes() {
-        if (this.remainingTimes.length === 0) {
-            return (<ListItem style={listitemstyle} disabled='true'>All routes completed.</ListItem>)
+        if (this.props.remainingTimes.length === 0) {
+            return (<ListItem style={listitemstyle} disabled={true}>All routes completed.</ListItem>)
         }
         else{
-            return this.remainingTimes.map( time => {
-                return ( <div>
-                            <ListItem style={listitemstyle} disabled='true'>{this.formatTime(time)}</ListItem>
+            return this.props.remainingTimes.map( (time, index) => {
+                return ( <div key={index}>
+                            <ListItem style={listitemstyle} disabled={true}>{this.formatTime(time)}</ListItem>
                             <Divider />
                          </div>)
                 })
         }
     }
     
+
+    
     render() {
-        
         return (
-            <div className='Hospital'>
+            <div key={this.props.index} className='Hospital'>
                 <Card style = {liststyle}>
                     <List>
-                        <ListItem style={listitemstyle} disabled='true'><h3>{this.props.name}</h3></ListItem>
+                        <ListItem style={listitemstyle} disabled={true}><h3>{this.props.name}</h3></ListItem>
                         <Divider />
                         {this.getRemainingTimes()}
                     </List>

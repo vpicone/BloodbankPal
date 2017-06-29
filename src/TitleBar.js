@@ -1,5 +1,6 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
+import OrderButton from './OrderButton';
 
 
 
@@ -50,11 +51,13 @@ const TitleBar = (props) => {
     
     return (
         <div>
-            <Paper zDepth="2" style={style}>
+            <Paper zDepth={2} style={style}>
                 <h1 style={textStyle}> {dayString(props.dayOfWeek)} Mespeed Routes
                     <br />
                     Current Time: {props.currentTime.toLocaleTimeString('en-US', { hour12: false })}
+                    
                 </h1>
+                <OrderButton />
             </Paper>
         </div>
     )
