@@ -3,13 +3,13 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 const style = {
     width: '500px',
-    margin: 'auto',
+    marginBottom: '40px',
     textDecoration: 'none',
 }
 
 const OrderButton = () => {
     return (
-        <RaisedButton buttonStyle={style} style={style} href='https://seton.medspeed.com/order/start'>Medspeed Order Form</RaisedButton>
+        <RaisedButton label="Medspeed Order Form" primary="true" style={style} href='https://seton.medspeed.com/order/start' />
     )
 }
 
