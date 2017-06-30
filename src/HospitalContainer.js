@@ -1,29 +1,42 @@
 import React from 'react';
 import './HospitalContainer.css'
 import Hospital from './Hospital'
-import hospitalpickups from './hospitalpickups';
-import EndOfRoutes from './EndOfRoutes'
+import EndOfRoutes from './EndOfRoutes';
+import hospitaljson from './hospitaljson';
 
 
 
 class HospitalContainer extends React.Component {
   
-    getRemaingTimes(times) {
-        return times.filter(time => {
-            return time > this.props.currentTimeString;
+    getRemaingTimes(destination) {
+        
+        const times = hospitaljson.dsmc.destinations[destination].times;
+        const remainingTimes = times[this.props.dayOfWeek.toLowerCase()].filter( time => {
+            return time.pickup > this.props.currentTimeString
         });
+        
+        return(remainingTimes);
+        
     }
+    
+    
+    
+    
     
    
     displayHospitals() {
-        return hospitalpickups.map( (hospital, index) => (
+        return Object.keys(hospitaljson.dsmc.destinations).map( (destination, index) => (
+
           <Hospital currentTimeString={this.props.currentTimeString} 
-            name={hospital.name}
-            remainingTimes={this.getRemaingTimes(hospital.times[this.props.dayOfWeek])}
+            name={destination.toUpperCase()}
+            remainingTimes={this.getRemaingTimes(destination)}
             key={index}
             index={index}
           />
-        ))
+         
+        )
+        
+        )
     }
     
     

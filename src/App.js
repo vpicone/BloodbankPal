@@ -20,6 +20,37 @@ class App extends React.Component {
       currentTime: new Date(),
     };
   }
+  
+  dayString(day) {
+    let str;
+    switch(day) {
+        case 0:
+            str = 'Sunday';
+            break;
+        case 1:
+            str = 'Moday';
+            break;
+        case 2:
+            str = 'Tuesday';
+            break;
+        case 3:
+            str = 'Wednesday';
+            break;
+        case 4:
+            str = 'Thursday';
+            break;
+        case 5:
+            str = 'Friday';
+            break;
+        case 6:
+            str = 'Saturday';
+            break;
+        default:
+            str = 'No date'
+            break;
+    }
+    return str;
+  }
 
   componentDidMount() {
     this.timerID = setInterval(() => this.tick(), 1000);
@@ -59,15 +90,18 @@ class App extends React.Component {
   render() {
 
     const currentTimeString = this.state.currentTime.toLocaleTimeString('en-US', { hour12: false }).replace(/:/g,'');
-    const isWeekend = (this.state.currentTime.getDay() === 0 || this.state.currentTime.getDay() === 6);
-    const dayOfWeek = this.state.currentTime.getDay();
+    const dayOfWeekString = this.dayString(this.state.currentTime.getDay());
 
     return (
       <div className="App">
         <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
           <div>
-            <TitleBar currentTime = {this.state.currentTime} isWeekend = {isWeekend} dayOfWeek={dayOfWeek} />
-            <HospitalContainer className = 'HospitalContainer' currentTimeString={currentTimeString} complete = {this.allRoutesDone(currentTimeString)} dayOfWeek = {dayOfWeek} />
+            <TitleBar currentTime = {this.state.currentTime} 
+                      dayOfWeek={dayOfWeekString} />
+            <HospitalContainer className = 'HospitalContainer' 
+                               currentTimeString={currentTimeString} 
+                               complete = {this.allRoutesDone(currentTimeString)} 
+                               dayOfWeek = {dayOfWeekString} />
             <Footer />
           </div>
         </MuiThemeProvider>
