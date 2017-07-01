@@ -2,7 +2,7 @@
   "name": "medspeedy",
   "version": "0.2.0",
   "private": true,
-  "homepage": "https://vpicone.github.io/medspeedy",
+  "homepage": "https://vpicone.github.io/bloodbankpal",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "material-ui": "^0.18.5",
