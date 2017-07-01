@@ -6,7 +6,7 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import TitleBar from './TitleBar';
 import HospitalContainer from './HospitalContainer';
-import hospitalpickups from './hospitalpickups';
+import hospitaljson from './hospitaljson.js';
 import Footer from './Footer';
 injectTapEventPlugin();
 
@@ -62,23 +62,30 @@ class App extends React.Component {
 
   allRoutesDone(currentTimeString) {
         let times = [];
+        const dayOfWeekString = this.dayString(this.state.currentTime.getDay()).toLowerCase();
         //push all pickup times to a single array
-        hospitalpickups.forEach( hospital => {
-            times.push(hospital.times[this.state.currentTime.getDay()])
+        Object.keys(hospitaljson.dsmc.destinations).forEach( destination => {
+          
+          const destinationTimes = hospitaljson
+                                   .dsmc
+                                   .destinations[destination]
+                                   .times[dayOfWeekString];
+                                  
+
+          destinationTimes.forEach( time => {
+            times.push(time.pickup);
+          })
+          
         })
-
-
-        const flattenedTimes = times.reduce( (a, b) => {
-            return a.concat(b);
-        });
-
-
-        //find any times that have yet to be met
-        const allRemainingTimes = flattenedTimes.filter(time => {
-            return time > currentTimeString;
+        
+        
+        const finished = times.every(time => {
+          return time < this.state.currentTime.toLocaleTimeString('en-US', { hour12: false }).replace(/:/g,'').slice(0,4);
         })
-        //return true if no more times remaining
-        return(allRemainingTimes.length === 0);
+        
+        console.log(finished);
+        return finished;
+
   }
 
   tick() {
