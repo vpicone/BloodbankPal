@@ -1,5 +1,6 @@
 .HospitalContainer{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     margin-left: 50px;

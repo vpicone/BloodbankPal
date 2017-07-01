@@ -23,6 +23,11 @@ const listitemstyle = {
     textAlign:'center'
 }
 
+const dividerstyle = {
+    marginLeft: '12px',
+    marginRight: '12px'
+}
+
 class Hospital extends React.Component {
 
 
@@ -40,7 +45,7 @@ class Hospital extends React.Component {
                 return ( 
                         <div key={index}>
 							<Delivery pickup={time.pickup} dropoff={time.dropoff} />
-							{index < this.props.remainingTimes.length - 1 ? <Divider /> : ''}
+							{index < this.props.remainingTimes.length - 1 ? <Divider style={dividerstyle}/> : ''}
 						</div>
 						)
                 })
@@ -56,8 +61,8 @@ class Hospital extends React.Component {
     				<List>
     				    <ListItem disabled={true} 
     				              style={{display: 'flex', justifyContent: 'center'}} 
-    				              innerDivStyle = {{display: 'flex', alignItems: 'center'}}>{this.props.name}</ListItem>
- 						<Divider />
+    				              innerDivStyle = {{display: 'flex', alignItems: 'center'}}><h2>{this.props.name}</h2></ListItem>
+ 						<Divider style={dividerstyle} />
     				    {this.getRemainingTimes()}
     				</List>
 				</Card>

@@ -3,6 +3,7 @@ import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import EmailIcon from 'material-ui/svg-icons/communication/email';
 import History from 'material-ui/svg-icons/action/history';
+import AccessTime from 'material-ui/svg-icons/device/access-time';
 
 
 
@@ -34,11 +35,11 @@ const Footer = (props) => {
 						</h3>
 					</Paper>
 					<Paper zDepth={2} style={style}>
-						<h3 style={textStyle}>Today's schedule.&nbsp;&nbsp;&nbsp;
+						<h3 style={textStyle}>{props.showEntireSchedule ? "Showing full schedule" : "Show full schedule"}.&nbsp;&nbsp;&nbsp;
 							<span>
-								<RaisedButton label="Show"
+								<RaisedButton label={props.showEntireSchedule ? "Hide" : "Show"}
 									primary='true'
-									icon={<History />}
+									icon={props.showEntireSchedule ? <History /> : <AccessTime />}
 									onClick={props.showSchedule}
 								/>
 							</span>

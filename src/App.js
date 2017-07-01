@@ -117,7 +117,7 @@ class App extends React.Component {
                                showEntireSchedule={this.state.showEntireSchedule}
                                complete = {this.allRoutesDone(currentTimeString)} 
                                dayOfWeek = {dayOfWeekString} />
-            <Footer showSchedule = {this.showSchedule}/>
+            <Footer showEntireSchedule={this.state.showEntireSchedule} showSchedule = {this.showSchedule}/>
           </div>
         </MuiThemeProvider>
       </div>
