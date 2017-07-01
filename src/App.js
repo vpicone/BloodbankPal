@@ -18,7 +18,15 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentTime: new Date(),
+      showEntireSchedule: false,
     };
+    this.showSchedule = this.showSchedule.bind(this);
+  }
+  
+  showSchedule(){
+    this.setState((prevState, props) => {
+      return {showEntireSchedule: !prevState.showEntireSchedule};
+    });
   }
   
   dayString(day) {
@@ -84,7 +92,7 @@ class App extends React.Component {
         })
         
         console.log(finished);
-        return finished;
+        return (finished);
 
   }
 
@@ -106,10 +114,11 @@ class App extends React.Component {
             <TitleBar currentTime = {this.state.currentTime} 
                       dayOfWeek={dayOfWeekString} />
             <HospitalContainer className = 'HospitalContainer' 
-                               currentTimeString={currentTimeString} 
+                               currentTimeString={currentTimeString}
+                               showEntireSchedule={this.state.showEntireSchedule}
                                complete = {this.allRoutesDone(currentTimeString)} 
                                dayOfWeek = {dayOfWeekString} />
-            <Footer />
+            <Footer showSchedule = {this.showSchedule}/>
           </div>
         </MuiThemeProvider>
       </div>

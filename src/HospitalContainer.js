@@ -15,7 +15,9 @@ class HospitalContainer extends React.Component {
             return time.pickup > this.props.currentTimeString
         });
         
-        return(remainingTimes);
+        //checks if the schedule is hidden. If it isn't return all the times to show.
+        const returnTimes = this.props.showEntireSchedule ? times[this.props.dayOfWeek.toLowerCase()] : remainingTimes;
+        return(returnTimes);
         
     }
     
@@ -41,11 +43,21 @@ class HospitalContainer extends React.Component {
     
     
     render () {
-        return (
-            <div className="HospitalContainer">
-                {this.props.complete ? <EndOfRoutes /> : this.displayHospitals() }
-            </div>
-        );
+        
+        if(this.props.showEntireSchedule) {
+            return (
+                <div className="HospitalContainer">
+                    {this.displayHospitals()}
+                </div> 
+            );
+        }
+        else {
+            return (
+                <div className="HospitalContainer">
+                    {this.props.complete ? <EndOfRoutes /> : this.displayHospitals() }
+                </div>
+            );
+        }
     }
 }
 

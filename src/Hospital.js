@@ -25,14 +25,7 @@ const listitemstyle = {
 
 class Hospital extends React.Component {
 
-    constructor(props)
-    {
-        super(props);
-        this.state = {
-            remainingTimes: this.props.remainingTimes,
-        }
 
-    }
 
     formatTime(time){
         return (time.slice(0,2) + ':' + time.slice(2,4));
