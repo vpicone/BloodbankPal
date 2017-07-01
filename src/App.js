@@ -91,7 +91,6 @@ class App extends React.Component {
           return time < this.state.currentTime.toLocaleTimeString('en-US', { hour12: false }).replace(/:/g,'').slice(0,4);
         })
         
-        console.log(finished);
         return (finished);
 
   }
