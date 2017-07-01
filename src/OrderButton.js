@@ -1,5 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import {cyan800, white} from 'material-ui/styles/colors';
 
 const style = {
     width: '500px',
@@ -9,7 +10,7 @@ const style = {
 
 const OrderButton = () => {
     return (
-        <RaisedButton labelColor="white" label="Medspeed Order Form" primary="true" style={style} href='https://seton.medspeed.com/order/start' />
+        <RaisedButton labelColor={white} backgroundColor={cyan800} label="Medspeed Order Form" style={style} href='https://seton.medspeed.com/order/start' />
     )
 }
 
