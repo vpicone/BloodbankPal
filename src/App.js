@@ -36,7 +36,7 @@ class App extends React.Component {
             str = 'Sunday';
             break;
         case 1:
-            str = 'Moday';
+            str = 'Monday';
             break;
         case 2:
             str = 'Tuesday';
@@ -74,12 +74,14 @@ class App extends React.Component {
         //push all pickup times to a single array
         Object.keys(hospitaljson.dsmc.destinations).forEach( destination => {
           
+          console.log(dayOfWeekString);
+          
           const destinationTimes = hospitaljson
                                    .dsmc
                                    .destinations[destination]
                                    .times[dayOfWeekString];
                                   
-
+                                
           destinationTimes.forEach( time => {
             times.push(time.pickup);
           })
