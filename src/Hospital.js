@@ -71,7 +71,5 @@ class Hospital extends React.Component {
     }
 }
 
-// //<ListItem primaryText={this.props.name} disabled={true} />
-// 						<Divider />
-// 						{this.getRemainingTimes()}
+
 export default Hospital;
