@@ -73,7 +73,8 @@ class App extends React.Component {
         const dayOfWeekString = this.dayString(this.state.currentTime.getDay()).toLowerCase();
         //push all pickup times to a single array
         
-        console.log(dayOfWeekString);
+
+
         
         Object.keys(hospitaljson.dsmc.destinations).forEach( destination => {
           
@@ -93,11 +94,9 @@ class App extends React.Component {
         
         
         const finished = times.every(time => {
-          console.log(`Time: ${time} CurrentTime:${this.state.currentTime.toTimeString('en-US', { hour12: false }).replace(/:/g,'').slice(0,4)}`)
           return time < this.state.currentTime.toTimeString('en-US', { hour12: false }).replace(/:/g,'').slice(0,4);
         })
         
-        console.log(finished);
         
         return (finished);
 
