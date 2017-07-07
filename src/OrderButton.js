@@ -3,7 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {cyan800, white} from 'material-ui/styles/colors';
 
 const style = {
-    width: '500px',
+    width: '50%',
     marginBottom: '40px',
     textDecoration: 'none',
 }
