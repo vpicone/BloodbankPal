@@ -1,64 +1,52 @@
 import React from 'react';
-import './HospitalContainer.css'
-import Hospital from './Hospital'
+import './HospitalContainer.css';
+import Hospital from './Hospital';
 import EndOfRoutes from './EndOfRoutes';
 import hospitaljson from './hospitaljson';
 
 
-
 class HospitalContainer extends React.Component {
-  
-    getRemaingTimes(destination) {
-        
-        const times = hospitaljson.dsmc.destinations[destination].times;
-        const remainingTimes = times[this.props.dayOfWeek.toLowerCase()].filter( time => {
-            return time.pickup > this.props.currentTimeString
-        });
-        
-        //checks if the schedule is hidden. If it isn't return all the times to show.
-        const returnTimes = this.props.showEntireSchedule ? times[this.props.dayOfWeek.toLowerCase()] : remainingTimes;
-        return(returnTimes);
-        
-    }
-    
-    
-    
-    
-    
-   
-    displayHospitals() {
-        return Object.keys(hospitaljson.dsmc.destinations).map( (destination, index) => (
+  getRemaingTimes(destination) {
+    const times = hospitaljson.dsmc.destinations[destination].times;
+    const remainingTimes = times[this.props.dayOfWeek.toLowerCase()]
+      .filter(time => time.pickup > this.props.currentTimeString);
 
-          <Hospital currentTimeString={this.props.currentTimeString} 
-            name={destination.toUpperCase()}
-            remainingTimes={this.getRemaingTimes(destination)}
-            key={index}
-            index={index}
-          />
-         
-        )
-        
-        )
+    // checks if the schedule is hidden. If it isn't return all the times to show.
+    const returnTimes = this.props.showEntireSchedule ? times[this.props.dayOfWeek.toLowerCase()] : remainingTimes;
+    return (returnTimes);
+  }
+
+  displayHospitals() {
+    return Object.keys(hospitaljson.dsmc.destinations).map((destination, index) => (
+
+      <Hospital
+        currentTimeString={this.props.currentTimeString}
+        name={destination.toUpperCase()}
+        remainingTimes={this.getRemaingTimes(destination)}
+        key={index}
+        index={index}
+      />
+
+    ),
+
+  );
+  }
+
+
+  render() {
+    if (this.props.showEntireSchedule) {
+      return (
+        <div className="HospitalContainer">
+          {this.displayHospitals()}
+        </div>
+      );
     }
-    
-    
-    render () {
-        
-        if(this.props.showEntireSchedule) {
-            return (
-                <div className="HospitalContainer">
-                    {this.displayHospitals()}
-                </div> 
-            );
-        }
-        else {
-            return (
-                <div className="HospitalContainer">
-                    {this.props.complete ? <EndOfRoutes /> : this.displayHospitals() }
-                </div>
-            );
-        }
-    }
+    return (
+      <div className="HospitalContainer">
+        {this.props.complete ? <EndOfRoutes /> : this.displayHospitals() }
+      </div>
+    );
+  }
 }
 
 export default HospitalContainer;

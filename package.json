@@ -1,16 +1,25 @@
 {
   "name": "bloodbankpal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "homepage": "https://vpicone.github.io/bloodbankpal",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "gsap": "^1.20.2",
     "material-ui": "^0.18.5",
+    "node-pre-gyp": "^0.6.36",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
+    "react-addons-transition-group": "^15.6.0",
     "react-dom": "^15.6.1",
     "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
     "gh-pages": "^1.0.0",
     "react-scripts": "1.0.7"
   },
