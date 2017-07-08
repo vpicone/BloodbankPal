@@ -31,33 +31,6 @@ class App extends React.Component {
 
   dayString(day) {
     let str;
-<<<<<<< HEAD
-    switch (day) {
-      case 0:
-        str = 'Sunday';
-        break;
-      case 1:
-        str = 'Moday';
-        break;
-      case 2:
-        str = 'Tuesday';
-        break;
-      case 3:
-        str = 'Wednesday';
-        break;
-      case 4:
-        str = 'Thursday';
-        break;
-      case 5:
-        str = 'Friday';
-        break;
-      case 6:
-        str = 'Saturday';
-        break;
-      default:
-        str = 'No date';
-        break;
-=======
     switch(day) {
         case 0:
             str = 'Sunday';
@@ -83,7 +56,6 @@ class App extends React.Component {
         default:
             str = 'No date'
             break;
->>>>>>> 4d78cf29e8475d4c06bd81a8e97ffd0d9eead46b
     }
     return str;
   }
@@ -97,58 +69,28 @@ class App extends React.Component {
   }
 
   allRoutesDone(currentTimeString) {
-<<<<<<< HEAD
-    const times = [];
-    const dayOfWeekString = this.dayString(this.state.currentTime.getDay()).toLowerCase();
-        // push all pickup times to a single array
-    Object.keys(hospitaljson.dsmc.destinations).forEach((destination) => {
-      const destinationTimes = hospitaljson
-                                   .dsmc
-                                   .destinations[destination]
-                                   .times[dayOfWeekString];
-=======
         let times = [];
         const dayOfWeekString = this.dayString(this.state.currentTime.getDay()).toLowerCase();
         //push all pickup times to a single array
-        
-
-
-        
         Object.keys(hospitaljson.dsmc.destinations).forEach( destination => {
-          
-          
-          
-          const destinationTimes = hospitaljson
-                                   .dsmc
-                                   .destinations[destination]
-                                   .times[dayOfWeekString];
-                                  
-                                
+          const destinationTimes =
+            hospitaljson
+             .dsmc
+             .destinations[destination]
+             .times[dayOfWeekString];
+
           destinationTimes.forEach( time => {
             times.push(time.pickup);
-          })
-          
+          });
+
         })
-        
-        
+
+
         const finished = times.every(time => {
           return time < this.state.currentTime.toTimeString('en-US', { hour12: false }).replace(/:/g,'').slice(0,4);
         })
-        
-        
+
         return (finished);
->>>>>>> 4d78cf29e8475d4c06bd81a8e97ffd0d9eead46b
-
-
-      destinationTimes.forEach((time) => {
-        times.push(time.pickup);
-      });
-    });
-
-
-    const finished = times.every(time => time < this.state.currentTime.toLocaleTimeString('en-US', { hour12: false }).replace(/:/g, '').slice(0, 4));
-
-    return (finished);
   }
 
   tick() {
@@ -158,12 +100,8 @@ class App extends React.Component {
   }
 
   render() {
-<<<<<<< HEAD
-    const currentTimeString = this.state.currentTime.toLocaleTimeString('en-US', { hour12: false }).replace(/:/g, '');
-=======
 
     const currentTimeString = this.state.currentTime.toTimeString('en-US', { hour12: false }).replace(/:/g,'');
->>>>>>> 4d78cf29e8475d4c06bd81a8e97ffd0d9eead46b
     const dayOfWeekString = this.dayString(this.state.currentTime.getDay());
 
     return (
