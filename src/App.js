@@ -8,7 +8,7 @@ import TitleBar from './TitleBar';
 import HospitalContainer from './HospitalContainer';
 import hospitaljson from './hospitaljson.js';
 import Footer from './Footer';
-
+import BaseHospitalSelector from './BaseHospitalSelector';
 
 injectTapEventPlugin();
 
@@ -112,13 +112,15 @@ class App extends React.Component {
               currentTime={this.state.currentTime}
               dayOfWeek={dayOfWeekString}
             />
-            <HospitalContainer
-              className="HospitalContainer"
-              currentTimeString={currentTimeString}
-              showEntireSchedule={this.state.showEntireSchedule}
-              complete={this.allRoutesDone(currentTimeString)}
-              dayOfWeek={dayOfWeekString}
-            />
+            <BaseHospitalSelector baseHospital={this.props.match.params.id}/>
+            {this.props.match.params.id ?
+              <HospitalContainer
+                className="HospitalContainer"
+                currentTimeString={currentTimeString}
+                showEntireSchedule={this.state.showEntireSchedule}
+                complete={this.allRoutesDone(currentTimeString)}
+                dayOfWeek={dayOfWeekString}
+              /> : ""}
             <Footer showEntireSchedule={this.state.showEntireSchedule} showSchedule={this.showSchedule} />
           </div>
         </MuiThemeProvider>
