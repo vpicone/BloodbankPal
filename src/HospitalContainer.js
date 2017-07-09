@@ -7,7 +7,7 @@ import hospitaljson from './hospitaljson';
 
 class HospitalContainer extends React.Component {
   getRemaingTimes(destination) {
-    const times = hospitaljson.dsmc.destinations[destination].times;
+    const times = hospitaljson[this.props.baseHospital].destinations[destination].times;
     const remainingTimes = times[this.props.dayOfWeek.toLowerCase()]
       .filter(time => time.pickup > this.props.currentTimeString);
 
@@ -17,7 +17,7 @@ class HospitalContainer extends React.Component {
   }
 
   displayHospitals() {
-    return Object.keys(hospitaljson.dsmc.destinations).map((destination, index) => (
+    return Object.keys(hospitaljson[this.props.baseHospital].destinations).map((destination, index) => (
 
       <Hospital
         currentTimeString={this.props.currentTimeString}
@@ -27,7 +27,7 @@ class HospitalContainer extends React.Component {
         index={index}
       />
 
-    ),
+    )
 
   );
   }

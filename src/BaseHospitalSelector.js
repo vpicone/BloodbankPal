@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router-dom';
-import {deepOrange800, cyan800, white} from 'material-ui/styles/colors';
+import {deepOrange900, cyan800, white} from 'material-ui/styles/colors';
 
 
 const SelectorButton = (props) => {
@@ -15,7 +15,7 @@ const SelectorButton = (props) => {
   return (
       <RaisedButton
         labelColor={white}
-        backgroundColor={ props.hospitalName === props.baseHospital ? deepOrange800 : cyan800}
+        backgroundColor={ props.hospitalName === props.baseHospital ? deepOrange900 : cyan800}
         label={props.hospitalName}
         style={style}
         containerElement={<Link to={props.hospitalName} />}
@@ -33,13 +33,14 @@ const BaseHospitalSelector = (props) => {
 
     return (
 		<Paper zDepth={3} style={style}>
-			<h3>Select your base hospital.</h3>
-      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'DSM' />
-      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'SMCA' />
-      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'DCMC' />
-      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'SMCW' />
-      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'SNW' />
-      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'SMCH' />
+		  {/*to do: enable closing the hospital selector*/}
+			<h2>Select your base hospital.</h2>
+      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'dsmc' />
+      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'smca' />
+      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'dcmc' />
+      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'smcw' />
+      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'snw' />
+      <SelectorButton baseHospital = {props.baseHospital} hospitalName = 'smch' />
 		</Paper>
     )
 }

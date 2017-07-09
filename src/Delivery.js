@@ -20,12 +20,19 @@ class Delivery extends React.Component {
   }
 
   render() {
+    if (this.props.pickup === "2359") {
+      return (
+        <ListItem disabled style={{ display: 'flex', justifyContent: 'center' }} innerDivStyle={{ display: 'flex', alignItems: 'center' }}>
+          <span>No routes for today.</span>
+        </ListItem>
+      )
+    }
 	  return (
-  <ListItem disabled style={{ display: 'flex', justifyContent: 'center' }} innerDivStyle={{ display: 'flex', alignItems: 'center' }}>
-    <span>{this.formatTime(this.props.pickup)}&nbsp;</span>
-    <ArrowForward />
-    <span>&nbsp;{this.formatTime(this.props.dropoff)}</span>
-  </ListItem>
+      <ListItem disabled style={{ display: 'flex', justifyContent: 'center' }} innerDivStyle={{ display: 'flex', alignItems: 'center' }}>
+        <span>{this.formatTime(this.props.pickup)}&nbsp;</span>
+        <ArrowForward />
+        <span>&nbsp;{this.formatTime(this.props.dropoff)}</span>
+      </ListItem>
 	  );
   }
 }
