@@ -9,8 +9,8 @@ const liststyle = {
   display: 'flex',
   flexDirection: 'column',
   width: '170px',
-  margin: '5px',
-  padding: '10px',
+  marginLeft: '5px',
+  marginRight: '5px',
 };
 
 const listitemstyle = {
@@ -53,7 +53,7 @@ class Hospital extends React.Component {
 
   render() {
     return (
-      <div style={liststyle} key={this.props.index} className="Hospital">
+      <div key={this.props.index} className="Hospital">
         <Card style={liststyle}>
           <List>
             <ListItem

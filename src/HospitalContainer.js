@@ -3,6 +3,7 @@ import './HospitalContainer.css';
 import Hospital from './Hospital';
 import EndOfRoutes from './EndOfRoutes';
 import hospitaljson from './hospitaljson';
+import { Collapse } from 'react-collapse';
 
 
 class HospitalContainer extends React.Component {
@@ -19,15 +20,17 @@ class HospitalContainer extends React.Component {
   displayHospitals() {
     return Object.keys(hospitaljson[this.props.baseHospital].destinations).map((destination, index) => (
 
-      <Hospital
-        currentTimeString={this.props.currentTimeString}
-        name={destination.toUpperCase()}
-        remainingTimes={this.getRemaingTimes(destination)}
-        key={index}
-        index={index}
-      />
+      <Collapse key={destination} forceInitialAnimation isOpened>
+        <Hospital
+          currentTimeString={this.props.currentTimeString}
+          name={destination.toUpperCase()}
+          remainingTimes={this.getRemaingTimes(destination)}
+          key={destination}
+          index={index}
+        />
+      </Collapse>
 
-    )
+    ),
 
   );
   }
