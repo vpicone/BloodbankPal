@@ -20,7 +20,11 @@ const BaseHospitalSelector = (props) => {
     <Paper zDepth={3} style={style}>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <h3>Which hospital are you at?</h3>
-        <DropDownMenu value={props.baseHospital} openImmediately={!props.baseHospital}>
+        <DropDownMenu
+          value={props.baseHospital}
+          openImmediately={!props.baseHospital}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        >
           <MenuItem value="dsmc" primaryText="Dell Seton" containerElement={<Link to="dsmc" />} />
           <MenuItem value="smca" primaryText="Main" containerElement={<Link to="smca" />} />
           <MenuItem value="dcmc" primaryText="Dell Children's" containerElement={<Link to="dcmc" />} />
