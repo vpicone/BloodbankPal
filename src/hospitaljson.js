@@ -219,6 +219,817 @@ const hospitaljson = {
       },
     },
   },
+  smca: {
+    destinations: {
+      dsmc: {
+			  times: {
+			    sunday: [
+						{ pickup: '0930', dropoff: '1215' },
+						{ pickup: '1230', dropoff: '1415' },
+						{ pickup: '1315', dropoff: '1445' },
+						{ pickup: '1500', dropoff: '1615' },
+						{ pickup: '1815', dropoff: '2015' },
+						{ pickup: '1945', dropoff: '2045' },
+    ],
+			    monday: [
+						{ pickup: '0630', dropoff: '0745' },
+						{ pickup: '0700', dropoff: '0900' },
+						{ pickup: '1045', dropoff: '1100' },
+						{ pickup: '1245', dropoff: '1330' },
+						{ pickup: '1400', dropoff: '1430' },
+						{ pickup: '1700', dropoff: '1730' },
+						{ pickup: '1815', dropoff: '1915' },
+						{ pickup: '2215', dropoff: '2245' },
+    ],
+			    tuesday: [
+						{ pickup: '0645', dropoff: '0730' },
+						{ pickup: '1030', dropoff: '1045' },
+						{ pickup: '1245', dropoff: '1330' },
+						{ pickup: '1345', dropoff: '1430' },
+						{ pickup: '1715', dropoff: '1730' },
+						{ pickup: '1815', dropoff: '1900' },
+						{ pickup: '2215', dropoff: '2230' },
+    ],
+			    wednesday: [
+						{ pickup: '0645', dropoff: '0745' },
+						{ pickup: '1015', dropoff: '1100' },
+						{ pickup: '1400', dropoff: '1445' },
+						{ pickup: '1715', dropoff: '1730' },
+						{ pickup: '1815', dropoff: '1915' },
+						{ pickup: '2230', dropoff: '2245' },
+    ],
+			    thursday: [
+						{ pickup: '0645', dropoff: '0745' },
+						{ pickup: '1030', dropoff: '1100' },
+						{ pickup: '1300', dropoff: '1330' },
+						{ pickup: '1345', dropoff: '1430' },
+						{ pickup: '1715', dropoff: '1730' },
+						{ pickup: '1830', dropoff: '1900' },
+						{ pickup: '2215', dropoff: '2230' },
+    ],
+			    friday: [
+						{ pickup: '0645', dropoff: '0745' },
+						{ pickup: '1030', dropoff: '1100' },
+						{ pickup: '1300', dropoff: '1330' },
+						{ pickup: '1345', dropoff: '1430' },
+						{ pickup: '1715', dropoff: '1730' },
+						{ pickup: '1815', dropoff: '1900' },
+						{ pickup: '2215', dropoff: '2300' },
+    ],
+			    saturday: [
+						{ pickup: '0930', dropoff: '1000' },
+						{ pickup: '1115', dropoff: '1245' },
+						{ pickup: '1230', dropoff: '1415' },
+						{ pickup: '1500', dropoff: '1615' },
+						{ pickup: '1815', dropoff: '2015' },
+						{ pickup: '1900', dropoff: '1945' },
+    ],
+  },
+      },
+      dcmc: {
+        times: {
+          sunday: [
+						{ pickup: '1315', dropoff: '1400' },
+						{ pickup: '1500', dropoff: '1545' },
+          ],
+          monday: [
+						{ pickup: '0630', dropoff: '0830' },
+						{ pickup: '1045', dropoff: '1145' },
+						{ pickup: '1700', dropoff: '1745' },
+						{ pickup: '1815', dropoff: '1945' },
+          ],
+          tuesday: [
+						{ pickup: '0645', dropoff: '0830' },
+						{ pickup: '1015', dropoff: '1130' },
+						{ pickup: '1715', dropoff: '1745' },
+						{ pickup: '1815', dropoff: '1945' },
+          ],
+          wednesday: [
+						{ pickup: '0645', dropoff: '0830' },
+						{ pickup: '1015', dropoff: '1130' },
+						{ pickup: '1715', dropoff: '1745' },
+						{ pickup: '1815', dropoff: '1945' },
+          ],
+          thursday: [
+						{ pickup: '0645', dropoff: '0830' },
+						{ pickup: '1030', dropoff: '1145' },
+						{ pickup: '1715', dropoff: '1745' },
+						{ pickup: '1830', dropoff: '1945' },
+          ],
+          friday: [
+						{ pickup: '0645', dropoff: '0830' },
+						{ pickup: '1030', dropoff: '1145' },
+						{ pickup: '1715', dropoff: '1745' },
+						{ pickup: '1815', dropoff: '1945' },
+          ],
+          saturday: [
+						{ pickup: '1115', dropoff: '1200' },
+						{ pickup: '1500', dropoff: '1545' },
+          ],
+        },
+      },
+      smcw: {
+        times: {
+          sunday: [
+						{ pickup: '1945', dropoff: '2115' },
+          ],
+          monday: [
+						{ pickup: '0615', dropoff: '0715' },
+						{ pickup: '1400', dropoff: '1615' },
+						{ pickup: '1815', dropoff: '2100' },
+          ],
+          tuesday: [
+						{ pickup: '0615', dropoff: '0700' },
+						{ pickup: '1345', dropoff: '1615' },
+						{ pickup: '1815', dropoff: '2045' },
+          ],
+          wednesday: [
+						{ pickup: '0615', dropoff: '0715' },
+						{ pickup: '1345', dropoff: '1700' },
+						{ pickup: '1815', dropoff: '1900' },
+          ],
+          thursday: [
+						{ pickup: '0630', dropoff: '0730' },
+						{ pickup: '1345', dropoff: '1615' },
+						{ pickup: '1830', dropoff: '2045' },
+          ],
+          friday: [
+						{ pickup: '0615', dropoff: '0715' },
+						{ pickup: '1345', dropoff: '1615' },
+						{ pickup: '1815', dropoff: '2045' },
+          ],
+          saturday: [
+						{ pickup: '1900', dropoff: '2030' },
+          ],
+        },
+      },
+      snw: {
+        times: {
+          sunday: [
+						{ pickup: '0930', dropoff: '1230' },
+						{ pickup: '1230', dropoff: '1445' },
+						{ pickup: '1945', dropoff: '2200' },
+          ],
+          monday: [
+						{ pickup: '1045', dropoff: '1145' },
+						{ pickup: '1815', dropoff: '2145' },
+          ],
+          tuesday: [
+						{ pickup: '0930', dropoff: '1130' },
+						{ pickup: '1815', dropoff: '2145' },
+          ],
+          wednesday: [
+						{ pickup: '0945', dropoff: '1145' },
+						{ pickup: '1815', dropoff: '2145' },
+          ],
+          thursday: [
+						{ pickup: '0945', dropoff: '1145' },
+						{ pickup: '1830', dropoff: '2145' },
+          ],
+          friday: [
+						{ pickup: '0930', dropoff: '1145' },
+						{ pickup: '1815', dropoff: '2145' },
+          ],
+          saturday: [
+						{ pickup: '0930', dropoff: '1045' },
+						{ pickup: '1230', dropoff: '1445' },
+						{ pickup: '1900', dropoff: '2115' },
+          ],
+        },
+      },
+      smch: {
+        times: {
+          sunday: [
+						{ pickup: '1815', dropoff: '1915' },
+          ],
+          monday: [
+						{ pickup: '0700', dropoff: '0730' },
+						{ pickup: '0930', dropoff: '1115' },
+						{ pickup: '1400', dropoff: '1845' },
+          ],
+          tuesday: [
+						{ pickup: '0615', dropoff: '0730' },
+						{ pickup: '0945', dropoff: '1145' },
+						{ pickup: '1345', dropoff: '1845' },
+          ],
+          wednesday: [
+						{ pickup: '0615', dropoff: '0730' },
+						{ pickup: '0945', dropoff: '1130' },
+						{ pickup: '1345', dropoff: '1945' },
+          ],
+          thursday: [
+						{ pickup: '0630', dropoff: '0730' },
+						{ pickup: '0945', dropoff: '1100' },
+						{ pickup: '1345', dropoff: '1845' },
+          ],
+          friday: [
+						{ pickup: '0615', dropoff: '0730' },
+						{ pickup: '0930', dropoff: '1100' },
+						{ pickup: '1345', dropoff: '1845' },
+          ],
+          saturday: [
+						{ pickup: '1815', dropoff: '1915' },
+          ],
+        },
+      },
+    },
+  },
+  dcmc: {
+    destinations: {
+      dsmc: {
+			  times: {
+			    sunday: [
+						{ pickup: '1530', dropoff: '1615' },
+						{ pickup: '1845', dropoff: '2015' },
+    ],
+			    monday: [
+						{ pickup: '0830', dropoff: '0945' },
+						{ pickup: '1445', dropoff: '1645' },
+						{ pickup: '1645', dropoff: '1915' },
+						{ pickup: '1945', dropoff: '2245' },
+    ],
+			    tuesday: [
+						{ pickup: '0830', dropoff: '0930' },
+						{ pickup: '1445', dropoff: '1645' },
+						{ pickup: '1630', dropoff: '1900' },
+						{ pickup: '1930', dropoff: '2230' },
+		],
+			    wednesday: [
+						{ pickup: '0830', dropoff: '0945' },
+						{ pickup: '1500', dropoff: '1730' },
+						{ pickup: '1645', dropoff: '1915' },
+						{ pickup: '1930', dropoff: '2245' },
+    ],
+			    thursday: [
+						{ pickup: '0830', dropoff: '2145' },
+						{ pickup: '1445', dropoff: '1700' },
+						{ pickup: '1630', dropoff: '1900' },
+						{ pickup: '1930', dropoff: '2230' },
+    ],
+			    friday: [
+						{ pickup: '0830', dropoff: '0945' },
+						{ pickup: '1500', dropoff: '1615' },
+						{ pickup: '1645', dropoff: '1900' },
+						{ pickup: '1930', dropoff: '2300' },
+    ],
+			    saturday: [
+						{ pickup: '1530', dropoff: '1615' },
+						{ pickup: '1830', dropoff: '2015' },
+    ],
+  },
+      },
+      smca: {
+        times: {
+          sunday: [
+						{ pickup: '1530', dropoff: '1815' },
+          ],
+          monday: [
+						{ pickup: '0830', dropoff: '1030' },
+						{ pickup: '1645', dropoff: '1830' },
+						{ pickup: '1945', dropoff: '2215' },
+          ],
+          tuesday: [
+						{ pickup: '0830', dropoff: '1015' },
+						{ pickup: '1630', dropoff: '1815' },
+						{ pickup: '1930', dropoff: '2215' },
+          ],
+          wednesday: [
+						{ pickup: '0830', dropoff: '1015' },
+						{ pickup: '1645', dropoff: '1830' },
+						{ pickup: '1930', dropoff: '2215' },
+          ],
+          thursday: [
+						{ pickup: '0830', dropoff: '1000' },
+						{ pickup: '1630', dropoff: '1815' },
+						{ pickup: '1930', dropoff: '2200' },
+          ],
+          friday: [
+						{ pickup: '0830', dropoff: '1000' },
+						{ pickup: '1645', dropoff: '1815' },
+						{ pickup: '1930', dropoff: '2215' },
+          ],
+          saturday: [
+						{ pickup: '1530', dropoff: '1815' },
+          ],
+        },
+      },
+      smcw: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '1945', dropoff: '2100' },
+          ],
+          tuesday: [
+						{ pickup: '1930', dropoff: '2045' },
+          ],
+          wednesday: [
+						{ pickup: '1930', dropoff: '2100' },
+          ],
+          thursday: [
+						{ pickup: '1930', dropoff: '2045' },
+          ],
+          friday: [
+						{ pickup: '1930', dropoff: '2045' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+      snw: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '1945', dropoff: '2145' },
+          ],
+          tuesday: [
+						{ pickup: '1930', dropoff: '2145' },
+          ],
+          wednesday: [
+						{ pickup: '1930', dropoff: '2145' },
+          ],
+          thursday: [
+						{ pickup: '1930', dropoff: '2145' },
+          ],
+          friday: [
+						{ pickup: '1930', dropoff: '2145' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+      smch: {
+        times: {
+          sunday: [
+						{ pickup: '1845', dropoff: '1915' },
+          ],
+          monday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          tuesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          wednesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          thursday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          friday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          saturday: [
+						{ pickup: '1830', dropoff: '1915' },
+          ],
+        },
+      },
+    },
+  },
+  smcw: {
+    destinations: {
+      dsmc: {
+			  times: {
+			    sunday: [
+						{ pickup: '0815', dropoff: '1215' },
+						{ pickup: '1845', dropoff: '2045' },
+    ],
+			    monday: [
+						{ pickup: '0730', dropoff: '1000' },
+						{ pickup: '0845', dropoff: '1145' },
+						{ pickup: '1600', dropoff: '1715' },
+						{ pickup: '2030', dropoff: '2245' },
+    ],
+			    tuesday: [
+						{ pickup: '0715', dropoff: '0815' },
+						{ pickup: '0830', dropoff: '1130' },
+						{ pickup: '1600', dropoff: '1715' },
+						{ pickup: '2030', dropoff: '2230' },
+    ],
+			    wednesday: [
+						{ pickup: '0715', dropoff: '0900' },
+						{ pickup: '0845', dropoff: '1130' },
+						{ pickup: '1700', dropoff: '1815' },
+						{ pickup: '2045', dropoff: '2245' },
+    ],
+			    thursday: [
+						{ pickup: '0730', dropoff: '0845' },
+						{ pickup: '0845', dropoff: '1130' },
+						{ pickup: '1600', dropoff: '1715' },
+						{ pickup: '2030', dropoff: '2230' },
+    ],
+			    friday: [
+						{ pickup: '0730', dropoff: '0845' },
+						{ pickup: '0900', dropoff: '1145' },
+						{ pickup: '1600', dropoff: '1715' },
+						{ pickup: '2030', dropoff: '2300' },
+    ],
+			    saturday: [
+						{ pickup: '0815', dropoff: '1000' },
+						{ pickup: '1745', dropoff: '1945' },
+    ],
+  },
+      },
+      smca: {
+        times: {
+          sunday: [
+						{ pickup: '0815', dropoff: '0915' },
+						{ pickup: '1845', dropoff: '1945' },
+          ],
+          monday: [
+						{ pickup: '0730', dropoff: '1045' },
+						{ pickup: '1600', dropoff: '1745' },
+						{ pickup: '2030', dropoff: '2215' },
+          ],
+          tuesday: [
+						{ pickup: '0715', dropoff: '0930' },
+						{ pickup: '1600', dropoff: '1745' },
+						{ pickup: '2030', dropoff: '2215' },
+          ],
+          wednesday: [
+						{ pickup: '0715', dropoff: '0945' },
+						{ pickup: '1700', dropoff: '1845' },
+						{ pickup: '2045', dropoff: '2215' },
+          ],
+          thursday: [
+						{ pickup: '0730', dropoff: '0945' },
+						{ pickup: '1600', dropoff: '1745' },
+						{ pickup: '2030', dropoff: '2200' },
+          ],
+          friday: [
+						{ pickup: '0730', dropoff: '0930' },
+						{ pickup: '1600', dropoff: '1745' },
+						{ pickup: '2030', dropoff: '2215' },
+          ],
+          saturday: [
+						{ pickup: '0815', dropoff: '0915' },
+						{ pickup: '1745', dropoff: '1900' },
+          ],
+        },
+      },
+      dcmc: {
+        times: {
+          sunday: [
+						{ pickup: '0815', dropoff: '1400' },
+          ],
+          monday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          tuesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          wednesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          thursday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          friday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          saturday: [
+						{ pickup: '0815', dropoff: '1200' },
+          ],
+        },
+      },
+      snw: {
+        times: {
+          sunday: [
+						{ pickup: '0815', dropoff: '1230' },
+						{ pickup: '1845', dropoff: '2200' },
+          ],
+          monday: [
+						{ pickup: '0730', dropoff: '1145' },
+						{ pickup: '2030', dropoff: '2145' },
+          ],
+          tuesday: [
+						{ pickup: '0715', dropoff: '1130' },
+						{ pickup: '2030', dropoff: '2145' },
+          ],
+          wednesday: [
+						{ pickup: '0715', dropoff: '1145' },
+						{ pickup: '2045', dropoff: '2145' },
+          ],
+          thursday: [
+						{ pickup: '0730', dropoff: '1145' },
+						{ pickup: '2030', dropoff: '2145' },
+          ],
+          friday: [
+						{ pickup: '0730', dropoff: '1145' },
+						{ pickup: '2030', dropoff: '2145' },
+          ],
+          saturday: [
+						{ pickup: '0815', dropoff: '1045' },
+						{ pickup: '1745', dropoff: '2115' },
+          ],
+        },
+      },
+      smch: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '1600', dropoff: '1845' },
+          ],
+          tuesday: [
+						{ pickup: '1600', dropoff: '1845' },
+          ],
+          wednesday: [
+						{ pickup: '1700', dropoff: '1945' },
+          ],
+          thursday: [
+						{ pickup: '1600', dropoff: '1845' },
+          ],
+          friday: [
+						{ pickup: '1600', dropoff: '1845' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+    },
+  },
+  snw: {
+    destinations: {
+      dsmc: {
+			  times: {
+			    sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+    ],
+			    monday: [
+						{ pickup: '2145', dropoff: '2245' },
+    ],
+			    tuesday: [
+						{ pickup: '2130', dropoff: '2230' },
+    ],
+			    wednesday: [
+						{ pickup: '2145', dropoff: '2245' },
+    ],
+			    thursday: [
+						{ pickup: '2130', dropoff: '2230' },
+    ],
+			    friday: [
+						{ pickup: '2145', dropoff: '2300' },
+    ],
+			    saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+    ],
+  },
+      },
+      smca: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '2145', dropoff: '2215' },
+          ],
+          tuesday: [
+						{ pickup: '2130', dropoff: '2215' },
+          ],
+          wednesday: [
+						{ pickup: '2145', dropoff: '2215' },
+          ],
+          thursday: [
+						{ pickup: '2130', dropoff: '2200' },
+          ],
+          friday: [
+						{ pickup: '2145', dropoff: '2210' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+      dcmc: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          tuesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          wednesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          thursday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          friday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+      smcw: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          tuesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          wednesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          thursday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          friday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+      smch: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          tuesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          wednesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          thursday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          friday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+    },
+  },
+  smch: {
+    destinations: {
+      dsmc: {
+			  times: {
+			    sunday: [
+						{ pickup: '0815', dropoff: '0900' },
+						{ pickup: '1130', dropoff: '1300' },
+    ],
+			    monday: [
+						{ pickup: '0800', dropoff: '0900' },
+						{ pickup: '1130', dropoff: '1300' },
+						{ pickup: '1845', dropoff: '2000' },
+    ],
+			    tuesday: [
+						{ pickup: '0800', dropoff: '0900' },
+						{ pickup: '1200', dropoff: '1300' },
+						{ pickup: '1845', dropoff: '2000' },
+    ],
+			    wednesday: [
+						{ pickup: '0800', dropoff: '0900' },
+						{ pickup: '1145', dropoff: '1300' },
+						{ pickup: '1945', dropoff: '2100' },
+    ],
+			    thursday: [
+						{ pickup: '0800', dropoff: '0900' },
+						{ pickup: '1115', dropoff: '1245' },
+						{ pickup: '1845', dropoff: '2000' },
+    ],
+			    friday: [
+						{ pickup: '0800', dropoff: '0900' },
+						{ pickup: '1115', dropoff: '1215' },
+						{ pickup: '1845', dropoff: '2000' },
+    ],
+			    saturday: [
+						{ pickup: '0815', dropoff: '0900' },
+						{ pickup: '1130', dropoff: '1300' },
+    ],
+  },
+      },
+      smca: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '0800', dropoff: '0945' },
+						{ pickup: '1130', dropoff: '1400' },
+          ],
+          tuesday: [
+						{ pickup: '0800', dropoff: '0930' },
+						{ pickup: '1200', dropoff: '1400' },
+          ],
+          wednesday: [
+						{ pickup: '0800', dropoff: '0930' },
+						{ pickup: '1145', dropoff: '1400' },
+          ],
+          thursday: [
+						{ pickup: '0800', dropoff: '0945' },
+						{ pickup: '1115', dropoff: '1415' },
+          ],
+          friday: [
+						{ pickup: '0800', dropoff: '0915' },
+						{ pickup: '1115', dropoff: '1400' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+      dcmc: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          tuesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          wednesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          thursday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          friday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+      smcw: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          tuesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          wednesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          thursday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          friday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+      snw: {
+        times: {
+          sunday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          monday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          tuesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          wednesday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          thursday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          friday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+          saturday: [
+						{ pickup: '2359', dropoff: '2359' },
+          ],
+        },
+      },
+    },
+  },
 };
 
 export default hospitaljson;

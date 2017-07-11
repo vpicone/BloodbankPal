@@ -1,5 +1,5 @@
 import React from 'react';
-import Paper from 'material-ui/Paper'
+import Paper from 'material-ui/Paper';
 
 
 
@@ -16,12 +16,13 @@ const EndofRoutes = (props) => {
     
     
     return (
-        <div>
-            <Paper zDepth="2" style={style}>
-                <h1 style={textStyle}>All routes completed.
-                </h1>
-            </Paper>
-        </div>
+            <div>
+                <Paper zDepth="2" style={style}>
+                    <h1 style={textStyle}>All routes completed.
+                    </h1>
+                </Paper>
+            </div>
+        
     )
 }
 

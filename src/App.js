@@ -8,7 +8,7 @@ import TitleBar from './TitleBar';
 import HospitalContainer from './HospitalContainer';
 import hospitaljson from './hospitaljson.js';
 import Footer from './Footer';
-
+import BaseHospitalSelector from './BaseHospitalSelector';
 
 injectTapEventPlugin();
 
@@ -70,12 +70,14 @@ class App extends React.Component {
 
   allRoutesDone(currentTimeString) {
         let times = [];
+        const currentHospital = this.props.match.params.id || "dsmc";
         const dayOfWeekString = this.dayString(this.state.currentTime.getDay()).toLowerCase();
+        const comparator = this.state.currentTime.toTimeString('en-US', { hour12: false }).replace(/:/g,'').slice(0,4);
+        
         //push all pickup times to a single array
-        Object.keys(hospitaljson.dsmc.destinations).forEach( destination => {
+        Object.keys(hospitaljson[currentHospital].destinations).forEach( destination => {
           const destinationTimes =
-            hospitaljson
-             .dsmc
+            hospitaljson[currentHospital]
              .destinations[destination]
              .times[dayOfWeekString];
 
@@ -87,7 +89,7 @@ class App extends React.Component {
 
 
         const finished = times.every(time => {
-          return time < this.state.currentTime.toTimeString('en-US', { hour12: false }).replace(/:/g,'').slice(0,4);
+          return (time < comparator || time === "2359") ;
         })
 
         return (finished);
@@ -112,13 +114,16 @@ class App extends React.Component {
               currentTime={this.state.currentTime}
               dayOfWeek={dayOfWeekString}
             />
-            <HospitalContainer
-              className="HospitalContainer"
-              currentTimeString={currentTimeString}
-              showEntireSchedule={this.state.showEntireSchedule}
-              complete={this.allRoutesDone(currentTimeString)}
-              dayOfWeek={dayOfWeekString}
-            />
+            <BaseHospitalSelector baseHospital={this.props.match.params.id}/>
+            {this.props.match.params.id ?
+              <HospitalContainer
+                baseHospital = {this.props.match.params.id }
+                className="HospitalContainer"
+                currentTimeString={currentTimeString}
+                showEntireSchedule={this.state.showEntireSchedule}
+                complete={this.allRoutesDone(currentTimeString)}
+                dayOfWeek={dayOfWeekString}
+              /> : ""}
             <Footer showEntireSchedule={this.state.showEntireSchedule} showSchedule={this.showSchedule} />
           </div>
         </MuiThemeProvider>

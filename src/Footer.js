@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import EmailIcon from 'material-ui/svg-icons/communication/email';
 import History from 'material-ui/svg-icons/action/history';
 import AccessTime from 'material-ui/svg-icons/device/access-time';
-import { cyan800, white } from 'material-ui/styles/colors';
+import { deepOrange900, cyan800, white } from 'material-ui/styles/colors';
 
 
 const Footer = (props) => {
@@ -43,8 +43,8 @@ const Footer = (props) => {
             <RaisedButton
               label={props.showEntireSchedule ? 'Hide' : 'Show'}
               labelColor={white}
-              backgroundColor={cyan800}
-							// primary='true'
+              backgroundColor={props.showEntireSchedule ? deepOrange900 : cyan800}
+                // primary='true'
               icon={props.showEntireSchedule ? <History /> : <AccessTime />}
               onClick={props.showSchedule}
             />

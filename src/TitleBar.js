@@ -10,11 +10,11 @@ const TitleBar = (props) => {
 		padding: "5px",
 		marginTop: "20px",
     };
-	
+
 
     return (
 		<Paper zDepth={3} style={style}>
-			<h1>{props.dayOfWeek} Mespeed Routes
+			<h1>{props.dayOfWeek} Medpeed Routes
 				<br />
 				Current Time: {props.currentTime.toLocaleTimeString('en-US', { hour12: false })}
 			</h1>
