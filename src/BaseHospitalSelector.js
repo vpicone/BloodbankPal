@@ -12,15 +12,16 @@ const BaseHospitalSelector = (props) => {
     flex: 'column',
     margin: 'auto',
     width: '700px',
-    padding: '10px',
+    padding: '5px',
     marginTop: '20px',
   };
 
   return (
     <Paper zDepth={3} style={style}>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <h3>Which hospital are you at?</h3>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline' }}>
+        <p style={{ fontSize: '25px' }}>Which hospital are you at?</p>
         <DropDownMenu
+          labelStyle={{ fontSize: '25px' }}
           value={props.baseHospital}
           openImmediately={!props.baseHospital}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
