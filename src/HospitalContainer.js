@@ -39,15 +39,15 @@ class HospitalContainer extends React.Component {
   render() {
     if (this.props.showEntireSchedule) {
       return (
-        <div className="HospitalContainer">
-          {this.displayHospitals()}
-        </div>
+          <div className="HospitalContainer">
+            {this.displayHospitals()}
+          </div>
       );
     }
     return (
-      <div className="HospitalContainer">
-        {this.props.complete ? <EndOfRoutes /> : this.displayHospitals() }
-      </div>
+        <div className="HospitalContainer">
+          {this.props.complete ? <EndOfRoutes /> : this.displayHospitals() }
+        </div>
     );
   }
 }
