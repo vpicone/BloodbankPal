@@ -1,3 +1,8 @@
-This project was made using React and Material UI. It solves the problem of outdated and hard to read courier schedules. The schedule updates in real time and allows for viewing the entire day's schedule with the click of a button.
+This project was made using React and Material UI. 
 
-![Demo](http://i.imgur.com/o5XeRzR.gif)
+**Problem:**The Seton healthcare system's bloodbank courier schedule was outdated and difficult to read.
+**Solution:** The schedule updates in real time and implements Googles Material Design pattern for readability.
+
+<p align="center">
+  <img src="http://i.imgur.com/o5XeRzR.gif" />
+</p>
