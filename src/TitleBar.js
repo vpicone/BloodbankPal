@@ -14,7 +14,7 @@ const TitleBar = (props) => {
 
     return (
 		<Paper zDepth={3} style={style}>
-			<h1>{props.dayOfWeek} Medpeed Routes
+			<h1>{props.dayOfWeek} Medspeed Routes
 				<br />
 				Current Time: {props.currentTime.toLocaleTimeString('en-US', { hour12: false })}
 			</h1>
