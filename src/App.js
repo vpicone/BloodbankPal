@@ -1,61 +1,60 @@
-import React from 'react';
-import './App.css';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import TitleBar from './TitleBar';
-import HospitalContainer from './HospitalContainer';
-import hospitaljson from './hospitaljson.js';
-import Footer from './Footer';
-import BaseHospitalSelector from './BaseHospitalSelector';
+import React from "react";
+import "./App.css";
+import injectTapEventPlugin from "react-tap-event-plugin";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import darkBaseTheme from "material-ui/styles/baseThemes/darkBaseTheme";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
+import TitleBar from "./TitleBar";
+import HospitalContainer from "./HospitalContainer";
+import hospitaljson from "./hospitaljson.js";
+import Footer from "./Footer";
+import BaseHospitalSelector from "./BaseHospitalSelector";
 
 injectTapEventPlugin();
 
-
 class App extends React.Component {
-
-
   constructor(props) {
     super(props);
     this.state = {
       currentTime: new Date(),
-      showEntireSchedule: false,
+      showEntireSchedule: false
     };
     this.showSchedule = this.showSchedule.bind(this);
   }
 
   showSchedule() {
-    this.setState((prevState, props) => ({ showEntireSchedule: !prevState.showEntireSchedule }));
+    this.setState((prevState, props) => ({
+      showEntireSchedule: !prevState.showEntireSchedule
+    }));
   }
 
   dayString(day) {
     let str;
-    switch(day) {
-        case 0:
-            str = 'Sunday';
-            break;
-        case 1:
-            str = 'Monday';
-            break;
-        case 2:
-            str = 'Tuesday';
-            break;
-        case 3:
-            str = 'Wednesday';
-            break;
-        case 4:
-            str = 'Thursday';
-            break;
-        case 5:
-            str = 'Friday';
-            break;
-        case 6:
-            str = 'Saturday';
-            break;
-        default:
-            str = 'No date'
-            break;
+    switch (day) {
+      case 0:
+        str = "Sunday";
+        break;
+      case 1:
+        str = "Monday";
+        break;
+      case 2:
+        str = "Tuesday";
+        break;
+      case 3:
+        str = "Wednesday";
+        break;
+      case 4:
+        str = "Thursday";
+        break;
+      case 5:
+        str = "Friday";
+        break;
+      case 6:
+        str = "Saturday";
+        break;
+      default:
+        str = "No date";
+        break;
     }
     return str;
   }
@@ -69,41 +68,47 @@ class App extends React.Component {
   }
 
   allRoutesDone(currentTimeString) {
-        let times = [];
-        const currentHospital = this.props.match.params.id || "dsmc";
-        const dayOfWeekString = this.dayString(this.state.currentTime.getDay()).toLowerCase();
-        const comparator = this.state.currentTime.toTimeString('en-US', { hour12: false }).replace(/:/g,'').slice(0,4);
-        
-        //push all pickup times to a single array
-        Object.keys(hospitaljson[currentHospital].destinations).forEach( destination => {
-          const destinationTimes =
-            hospitaljson[currentHospital]
-             .destinations[destination]
-             .times[dayOfWeekString];
+    let times = [];
+    const currentHospital = this.props.match.params.id || "dsmc";
+    const dayOfWeekString = this.dayString(
+      this.state.currentTime.getDay()
+    ).toLowerCase();
+    const comparator = this.state.currentTime
+      .toTimeString("en-US", { hour12: false })
+      .replace(/:/g, "")
+      .slice(0, 4);
 
-          destinationTimes.forEach( time => {
-            times.push(time.pickup);
-          });
+    //push all pickup times to a single array
+    Object.keys(
+      hospitaljson[currentHospital].destinations
+    ).forEach(destination => {
+      const destinationTimes =
+        hospitaljson[currentHospital].destinations[destination].times[
+          dayOfWeekString
+        ];
 
-        })
+      destinationTimes.forEach(time => {
+        times.push(time.pickup);
+      });
+    });
 
+    const finished = times.every(time => {
+      return time < comparator || time === "2359";
+    });
 
-        const finished = times.every(time => {
-          return (time < comparator || time === "2359") ;
-        })
-
-        return (finished);
+    return finished;
   }
 
   tick() {
     this.setState({
-      currentTime: new Date(),
+      currentTime: new Date()
     });
   }
 
   render() {
-
-    const currentTimeString = this.state.currentTime.toTimeString('en-US', { hour12: false }).replace(/:/g,'');
+    const currentTimeString = this.state.currentTime
+      .toTimeString("en-US", { hour12: false })
+      .replace(/:/g, "");
     const dayOfWeekString = this.dayString(this.state.currentTime.getDay());
 
     return (
@@ -114,17 +119,21 @@ class App extends React.Component {
               currentTime={this.state.currentTime}
               dayOfWeek={dayOfWeekString}
             />
-            <BaseHospitalSelector baseHospital={this.props.match.params.id}/>
-            {this.props.match.params.id ?
-              <HospitalContainer
-                baseHospital = {this.props.match.params.id }
-                className="HospitalContainer"
-                currentTimeString={currentTimeString}
-                showEntireSchedule={this.state.showEntireSchedule}
-                complete={this.allRoutesDone(currentTimeString)}
-                dayOfWeek={dayOfWeekString}
-              /> : ""}
-            <Footer showEntireSchedule={this.state.showEntireSchedule} showSchedule={this.showSchedule} />
+            <BaseHospitalSelector baseHospital={this.props.match.params.id} />
+            {this.props.match.params.id
+              ? <HospitalContainer
+                  baseHospital={this.props.match.params.id}
+                  className="HospitalContainer"
+                  currentTimeString={currentTimeString}
+                  showEntireSchedule={this.state.showEntireSchedule}
+                  complete={this.allRoutesDone(currentTimeString)}
+                  dayOfWeek={dayOfWeekString}
+                />
+              : ""}
+            <Footer
+              showEntireSchedule={this.state.showEntireSchedule}
+              showSchedule={this.showSchedule}
+            />
           </div>
         </MuiThemeProvider>
       </div>
