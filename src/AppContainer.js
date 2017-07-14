@@ -1,4 +1,3 @@
-import ReactGA from 'react-ga';
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -7,19 +6,9 @@ import {
 } from 'react-router-dom';
 import App from './App';
 
-class AppContainer extends React.Component {
+const AppContainer = () => {
 
-  constructor() {
-    super();
-    ReactGA.initialize('UA-77141894-2');
-  }
-
-  logPageView() {
-    ReactGA.set({ page: window.location.pathname + window.location.search });
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }
-
-    render() {
+  
       return(
       <Router onUpdate={this.logPageView}>
         <div>
@@ -29,7 +18,7 @@ class AppContainer extends React.Component {
           </Switch>
         </div>
       </Router>
-    )}
+    )
 }
 
 export default AppContainer;
