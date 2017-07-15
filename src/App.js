@@ -1,16 +1,9 @@
 import React from "react";
-import "./App.css";
-import injectTapEventPlugin from "react-tap-event-plugin";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import darkBaseTheme from "material-ui/styles/baseThemes/darkBaseTheme";
-import getMuiTheme from "material-ui/styles/getMuiTheme";
-import TitleBar from "./TitleBar";
-import HospitalContainer from "./HospitalContainer";
-import hospitaljson from "./hospitaljson.js";
-import Footer from "./Footer";
-import BaseHospitalSelector from "./BaseHospitalSelector";
-
-injectTapEventPlugin();
+import TitleBar from "./MedspeedComponents/TitleBar";
+import HospitalContainer from "./MedspeedComponents/HospitalContainer";
+import hospitaljson from "./MedspeedComponents/hospitaljson.js";
+import Footer from "./MedspeedComponents/Footer";
+import BaseHospitalSelector from "./MedspeedComponents/BaseHospitalSelector";
 
 class App extends React.Component {
   constructor(props) {
@@ -21,6 +14,7 @@ class App extends React.Component {
     };
     this.showSchedule = this.showSchedule.bind(this);
   }
+  
 
   showSchedule() {
     this.setState((prevState, props) => ({
@@ -112,30 +106,26 @@ class App extends React.Component {
     const dayOfWeekString = this.dayString(this.state.currentTime.getDay());
 
     return (
-      <div className="App">
-        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-          <div>
-            <TitleBar
-              currentTime={this.state.currentTime}
-              dayOfWeek={dayOfWeekString}
-            />
-            <BaseHospitalSelector baseHospital={this.props.match.params.id} />
-            {this.props.match.params.id
-              ? <HospitalContainer
-                  baseHospital={this.props.match.params.id}
-                  className="HospitalContainer"
-                  currentTimeString={currentTimeString}
-                  showEntireSchedule={this.state.showEntireSchedule}
-                  complete={this.allRoutesDone(currentTimeString)}
-                  dayOfWeek={dayOfWeekString}
-                />
-              : ""}
-            <Footer
-              showEntireSchedule={this.state.showEntireSchedule}
-              showSchedule={this.showSchedule}
-            />
-          </div>
-        </MuiThemeProvider>
+      <div style={{flex: '1'}}>
+          <TitleBar
+            currentTime={this.state.currentTime}
+            dayOfWeek={dayOfWeekString}
+          />
+          <BaseHospitalSelector baseHospital={this.props.match.params.id} />
+          {this.props.match.params.id
+            ? <HospitalContainer
+                baseHospital={this.props.match.params.id}
+                className="HospitalContainer"
+                currentTimeString={currentTimeString}
+                showEntireSchedule={this.state.showEntireSchedule}
+                complete={this.allRoutesDone(currentTimeString)}
+                dayOfWeek={dayOfWeekString}
+              />
+            : ""}
+          <Footer
+            showEntireSchedule={this.state.showEntireSchedule}
+            showSchedule={this.showSchedule}
+          />
       </div>
     );
   }

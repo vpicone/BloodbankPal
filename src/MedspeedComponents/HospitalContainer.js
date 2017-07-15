@@ -1,9 +1,18 @@
 import React from "react";
-import "./HospitalContainer.css";
 import Hospital from "./Hospital";
 import EndOfRoutes from "./EndOfRoutes";
 import hospitaljson from "./hospitaljson";
 import { Collapse } from "react-collapse";
+
+const style = {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    textAlign: "center",
+    marginLeft: "50px",
+    marginRight: "50px",
+    marginTop: "15px"
+}
 
 class HospitalContainer extends React.Component {
   getRemaingTimes(destination) {
@@ -39,13 +48,13 @@ class HospitalContainer extends React.Component {
   render() {
     if (this.props.showEntireSchedule) {
       return (
-        <div className="HospitalContainer">
+        <div style={style}>
           {this.displayHospitals()}
         </div>
       );
     }
     return (
-      <div className="HospitalContainer">
+      <div style={style}>
         {this.props.complete ? <EndOfRoutes /> : this.displayHospitals()}
       </div>
     );
