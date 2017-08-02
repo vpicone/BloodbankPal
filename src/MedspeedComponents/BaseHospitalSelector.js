@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import ArrowForward from "material-ui/svg-icons/navigation/arrow-forward";
 import DropDownMenu from "material-ui/DropDownMenu";
 import MenuItem from "material-ui/MenuItem";
+import DaySelector from './DaySelector';
+import RaisedButton from 'material-ui/RaisedButton';
+import { deepOrange900, white } from "material-ui/styles/colors";
 
 const BaseHospitalSelector = props => {
   const style = {
@@ -14,6 +17,9 @@ const BaseHospitalSelector = props => {
     padding: "5px",
     marginTop: "20px"
   };
+  const buttonStyle = {
+    width: "100px",
+  }
 
   return (
     <Paper zDepth={3} style={style}>
@@ -75,9 +81,24 @@ const BaseHospitalSelector = props => {
         style={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
+          margin: "10px"
         }}
       >
+      <DaySelector dayOfWeek={props.dayOfWeek} pickDay = {props.pickDay} />
+        <RaisedButton 
+          label="Reset"
+          style = {buttonStyle}
+          labelColor={white}
+          backgroundColor={deepOrange900}
+          onTouchTap={props.reset} />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
         <p>Pickup&nbsp;</p> <ArrowForward /> <p>&nbsp;Dropoff</p>
       </div>
     </Paper>

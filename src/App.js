@@ -5,20 +5,38 @@ import hospitaljson from "./MedspeedComponents/hospitaljson.js";
 import Footer from "./MedspeedComponents/Footer";
 import BaseHospitalSelector from "./MedspeedComponents/BaseHospitalSelector";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentTime: new Date(),
-      showEntireSchedule: false
+      showEntireSchedule: false,
+      overRideDay: null
     };
     this.showSchedule = this.showSchedule.bind(this);
+    this.pickDay = this.pickDay.bind(this);
+    this.reset = this.reset.bind(this);
   }
   
 
   showSchedule() {
     this.setState((prevState, props) => ({
       showEntireSchedule: !prevState.showEntireSchedule
+    }));
+  }
+  
+  pickDay(newDay) {
+    this.setState((prevState, props) => ({
+      showEntireSchedule: true,
+      overRideDay: newDay,
+    }));
+  }
+  
+  reset() {
+    this.setState((prevState, props) => ({
+      showEntireSchedule: false,
+      overRideDay: null,
     }));
   }
 
@@ -111,7 +129,11 @@ class App extends React.Component {
             currentTime={this.state.currentTime}
             dayOfWeek={dayOfWeekString}
           />
-          <BaseHospitalSelector baseHospital={this.props.match.params.id} />
+          <BaseHospitalSelector 
+            dayOfWeek={this.state.overRideDay || dayOfWeekString} 
+            pickDay={this.pickDay} 
+            baseHospital={this.props.match.params.id}
+            reset={this.reset} />
           {this.props.match.params.id
             ? <HospitalContainer
                 baseHospital={this.props.match.params.id}
@@ -119,7 +141,7 @@ class App extends React.Component {
                 currentTimeString={currentTimeString}
                 showEntireSchedule={this.state.showEntireSchedule}
                 complete={this.allRoutesDone(currentTimeString)}
-                dayOfWeek={dayOfWeekString}
+                dayOfWeek={this.state.overRideDay || dayOfWeekString}
               />
             : ""}
           <Footer

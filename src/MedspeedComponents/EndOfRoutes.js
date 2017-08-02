@@ -13,7 +13,7 @@ const EndofRoutes = props => {
 
   return (
     <div>
-      <Paper zDepth="2" style={style}>
+      <Paper zDepth={2} style={style}>
         <h1 style={textStyle}>All routes completed.</h1>
       </Paper>
     </div>
